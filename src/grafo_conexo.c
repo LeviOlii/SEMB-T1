@@ -118,7 +118,7 @@ int carregarGrafo(const char *caminhoArquivo)
 int verificarConectividade(int n)
 {
     int topo = -1;      // Inicialização do índice que representa o topo da pilha
-    int atual = 0;      // Vértice inicial para a DFS
+    int atual = 0;      // Vértice inicial para a DFS e vértice atual em exploração
     int i;              // Índice de iteração
 
     // Prepara vetor de visitados setando todas as posições como 0 (não visitado)
