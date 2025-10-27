@@ -1,16 +1,14 @@
 # 🔍 Verificação de Conectividade em Grafos (DFS Iterativa)
 
-Este projeto implementa um **algoritmo em C** para verificar se um grafo não direcionado é **conexo**.  
-A entrada é uma **matriz de adjacência** armazenada em um arquivo `.txt`, e o programa realiza uma **busca em profundidade (DFS)** de forma **iterativa**, sem uso de recursividade ou alocação dinâmica.
+Este projeto implementa um **algoritmo em C** para verificar se um grafo não direcionado é **conexo**. A entrada é uma **matriz de adjacência** armazenada em um arquivo `.txt`, e o programa realiza uma **busca em profundidade (DFS)** de forma **iterativa**, sem uso de recursividade ou alocação dinâmica.
 
 ---
 
 ## 🧠 Contexto do Projeto
 
-Este código foi desenvolvido como parte do **Trabalho T1** da disciplina **Sistemas Embarcados**,  
-ministrada pelo professor **Elias Teodoro Silva Júnior** no **Instituto Federal de Educação, Ciência e Tecnologia do Ceará (IFCE) - Campus Fortaleza**.
+Este código foi desenvolvido como parte do **Trabalho T1** da disciplina **Sistemas Embarcados**, ministrada pelo professor **Elias Teodoro da Silva Júnior** no **Instituto Federal de Educação, Ciência e Tecnologia do Ceará (IFCE) - Campus Fortaleza**.
 
-O foco principal é explorar **eficiência e simplicidade em sistemas embarcados**, evitando recursividade e consumo excessivo de memória.
+O foco principal é explorar de forma simulada **as principais etapas no processo de desenvolvimento de aplicações embarcadas**. Na etapa atual, o objetivo consiste em escolher um algoritmo, implementá-lo em linguagem C e validar seu funcionamento.
 
 ---
 
