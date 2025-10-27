@@ -120,7 +120,6 @@ int verificarConectividade(int n)
     int topo = -1;      // Inicialização do índice que representa o topo da pilha
     int atual = 0;      // Vértice inicial para a DFS
     int i;              // Índice de iteração
-    int visitados = 0;  // Contador de vértices visitados
 
     // Prepara vetor de visitados setando todas as posições como 0 (não visitado)
     for (i = 0; i < n; i++)
@@ -129,7 +128,6 @@ int verificarConectividade(int n)
     // Inicia a DFS a partir do vértice 0
     pilha[++topo] = atual; // Empilha o vértice inicial
     visitado[atual] = 1;   // Marca como visitado
-    visitados++;            // Incrementa contador
 
     while (topo >= 0)
     {
@@ -142,7 +140,6 @@ int verificarConectividade(int n)
             {
                 visitado[i] = 1;
                 pilha[++topo] = i;
-                visitados++;
             }
         }
 
