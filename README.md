@@ -91,7 +91,7 @@ const char *arquivoEntrada = "../input/grafo_conexo_1.txt";
 ## 🧪 Exemplo de Saída
 
 ```bash
-✅ Matriz de adjacência (5 x 5) carregada com sucesso.
+Matriz de adjacência (89 x 89) carregada com sucesso.
 
 Resultado: O grafo é CONEXO.
 ```
@@ -99,7 +99,7 @@ Resultado: O grafo é CONEXO.
 ou
 
 ```bash
-✅ Matriz de adjacência (5 x 5) carregada com sucesso.
+Matriz de adjacência (89 x 89) carregada com sucesso.
 
 Resultado: O grafo NÃO é conexo.
 ```
