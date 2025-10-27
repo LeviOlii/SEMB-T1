@@ -32,14 +32,18 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 
 ```bash
 .
+├── docs/
+│   └── doxygen docs...          # Implementação principal
 ├── src/
-│   └── grafo_conexo.c          # Implementação principal
+│   └── grafo_conexo.c           # Implementação principal
 ├── include/
-│   └── grafo_conexo.h          # Cabeçalho com protótipos e definições
+│   └── grafo_conexo.h           # Cabeçalho com protótipos e definições
 ├── input/
-│   ├── grafo_conexo_1.txt      # Exemplo de grafo conexo
-│   └── grafo_nao_conexo_5.txt  # Exemplo de grafo não conexo
-└── README.md                   # Este arquivo
+│   ├── grafo_conexo_1.txt       # Exemplo de grafo conexo
+│   ├── grafo_nao_conexo_5.txt   # Exemplo de grafo não conexo
+│   └── ...
+├── Doxyfile                     # Arquivo de configuração do Doxygen
+└── README.md                    # Este arquivo
 
 ```
 
@@ -68,6 +72,8 @@ A diagonal principal deve conter apenas zeros (grafo[i][i] = 0), já que um vér
 ---
 
 ## 🚀 Como Compilar e Executar
+
+Antes de tudo, vá no diretório ./src
 
 ### 1️⃣ Compilação
 

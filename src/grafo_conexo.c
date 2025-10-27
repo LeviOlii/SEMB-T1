@@ -25,7 +25,7 @@
  *         Altere o caminho do arquivo na função main() se necessário.
  *         OBS: O caminho definido deve ser relativo à pasta onde fica o executável.
  *         ex:                    "../input/grafo_conexo_1.txt".
- *       - Compile o código com:  gcc ./src/grafo_conexo.c -o grafo_conexo
+ *       - Compile na pasta src o código com:  gcc ./grafo_conexo.c -o grafo_conexo
  *       - Execute o programa:   ./grafo_conexo
  *       .
  */
