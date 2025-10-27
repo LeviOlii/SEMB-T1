@@ -78,7 +78,7 @@ Antes de tudo, vá no diretório ./src
 ### 1️⃣ Compilação
 
 ```bash
-gcc ./src/grafo_conexo.c -o grafo_conexo
+gcc ./grafo_conexo.c -o grafo_conexo
 ```
 
 ### 2️⃣ Execução
