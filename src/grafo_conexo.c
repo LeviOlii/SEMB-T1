@@ -146,8 +146,6 @@ int verificarConectividade(int n)
             }
         }
 
-        // Possível otimização futura (T3)
-        // if (visitados == n) break;
     }
 
     // Verifica se todos foram visitados
