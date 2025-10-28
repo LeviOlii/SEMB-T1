@@ -15,18 +15,18 @@
  *
  *  @date 03/11/2025
  *  @version 1.0
- * 
- *  @par License: 
+ *
+ *  @par License:
  *  Uso acadêmico livre com citação dos autores.
  *
  *  @par Instructions:
- *       - Na pasta raiz do projeto haverá uma pasta 'input' contendo arquivos
- *         de exemplo com matrizes de adjacência (0s e 1s) que representam grafos.
- *         Altere o caminho do arquivo na função main() se necessário.
+ *       - Na pasta raiz do projeto haverá uma pasta 'src/validation_data' contendo arquivos
+ *         de exemplo com matrizes de adjacência (0s e 1s) que representam grafos gerados
+ *         com diferentes probabilidades de haver conexão entre par de vértices.
+ *         Estes arquivos podem ser usados para testar o programa.
  *         OBS: O caminho definido deve ser relativo à pasta onde fica o executável.
- *         ex:                    "../input/grafo_conexo_1.txt".
- *       - Compile na pasta src o código com:  gcc ./grafo_conexo.c -o grafo_conexo
- *       - Execute o programa:   ./grafo_conexo
+ *       - Na pasta src, compile o código com:  gcc ./grafo_conexo.c -o grafo_conexo
+ *       - Execute o programa:   ./grafo_conexo "caminho_do_arquivo.txt"
  *       .
  */
 
@@ -117,9 +117,9 @@ int carregarGrafo(const char *caminhoArquivo)
 // -----------------------------------------------------------------------------
 int verificarConectividade(int n)
 {
-    int topo = -1;      // Inicialização do índice que representa o topo da pilha
-    int atual = 0;      // Vértice inicial para a DFS e vértice atual em exploração
-    int i;              // Índice de iteração
+    int topo = -1; // Inicialização do índice que representa o topo da pilha
+    int atual = 0; // Vértice inicial para a DFS e vértice atual em exploração
+    int i;         // Índice de iteração
 
     // Prepara vetor de visitados setando todas as posições como 0 (não visitado)
     for (i = 0; i < n; i++)
@@ -142,7 +142,6 @@ int verificarConectividade(int n)
                 pilha[++topo] = i;
             }
         }
-
     }
 
     // Verifica se todos foram visitados
@@ -163,24 +162,30 @@ int verificarConectividade(int n)
  *
  * @details
  *      Define o caminho relativo do arquivo de entrada, carrega a matriz de adjacência,
- *      executa o algoritmo de verificação de conectividade e exibe o resultado.
+ *      executa o algoritmo de verificação de conectividade e exibe o resultado. 
+ *      Permite passar o arquivo de entrada (.txt) como argumento na linha de comando.
  */
-int main()
-{
+int main(int argc, char *argv[]){
     int N, conexo;
+    const char *arquivoEntrada;
 
-    // Caminho relativo para o arquivo de entrada
-    const char *arquivoEntrada = "../input/grafo_conexo_1.txt";
+    // Verifica se o usuário passou o nome do arquivo na linha de comando
+    if (argc < 2)
+    {
+        printf("Uso: %s <arquivo_entrada.txt>\n", argv[0]);
+        return 1;
 
-    // --- Etapa 1: Leitura da matriz ---
+    // Pega o nome do arquivo do argumento
+    arquivoEntrada = argv[1];
+
+    // Leitura e verificação
     N = carregarGrafo(arquivoEntrada);
     if (N <= 0)
         return 1;
 
-    // --- Etapa 2: Execução do algoritmo ---
     conexo = verificarConectividade(N);
 
-    // --- Etapa 3: Exibição do resultado ---
+    // Exibe o resultado no terminal
     if (conexo)
         printf("Resultado: O grafo é CONEXO.\n");
     else
