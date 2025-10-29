@@ -35,12 +35,13 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 ├── docs/
 │   └── doxygen docs...          # Implementação principal
 ├── src/
-│   └── grafo_conexo.c           # Implementação principal
+│   ├── grafo_conexo.c           # Implementação principal
+│   └── validador_geral.py       # Programa de validação do algoritmo
 ├── include/
 │   └── grafo_conexo.h           # Cabeçalho com protótipos e definições
-├── input/
-│   ├── grafo_conexo_1.txt       # Exemplo de grafo conexo
-│   ├── grafo_nao_conexo_5.txt   # Exemplo de grafo não conexo
+├── validation_data/
+│   ├── grafo_p0.01_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
+│   ├── grafo_p0.01_2.txt      
 │   └── ...
 ├── Doxyfile                     # Arquivo de configuração do Doxygen
 └── README.md                    # Este arquivo
@@ -111,6 +112,55 @@ Resultado: O grafo NÃO é conexo.
 ```
 
 ---
+
+## 📊 Script de Validação e Análise (validador_geral.py)
+
+O validador_geral.py foi com o objetivo de validar automaticamente o algoritmo em C comparando seus resultados com os obtidos por uma biblioteca de referência do Python (NetworkX).
+
+### ⚙️ Funcionamento
+
+O script executa uma bateria de testes automatizada, gerando diversos grafos aleatórios com diferentes probabilidades de conexão entre os vértices. Ele compara a saída do algoritmo em C com a função nx.is_connected() (do NetworkX, considerada confiável), mede a acurácia dos resultados, mostra a comparação entre a saída de cada teste no terminal e gera um gráfico da acurácia por probabilidade de teste.
+
+1. Geração dos grafos:
+
+* Cria arquivos .txt representando matrizes de adjacência de grafos aleatórios.
+* Cada arquivo é salvo na pasta validation_data/.
+* Caso os arquivos já existam, o script não os recria (mantendo consistência nos testes).
+
+2. Execução automática do código em C:
+
+* O script chama o executável (grafo_conexo.exe) para testar cada arquivo de grafo.
+* Usa o módulo subprocess para capturar a saída do terminal.
+* Comparação de resultados:
+* Verifica se o resultado do programa em C coincide com o resultado do NetworkX.
+
+3. Análise e visualização:
+
+* Calcula a acurácia média para cada probabilidade de aresta.
+* Gera um gráfico de acurácia (%) em função da probabilidade, mostrando o desempenho do algoritmo.
+
+### 🧮 Exemplo de Saída no Terminal
+
+```bash
+p=0.05 | ./validation_data/grafo_p0.05_1.txt | esperado=True | obtido=True
+>> Probabilidade 0.05 → Acurácia: 100.0%
+```
+
+### 📈 Exemplo de Gráfico Gerado
+
+O gráfico mostra a acurácia do algoritmo em C em relação à implementação Python (is_connected()):
+
+```css
+Acurácia (%)
+│
+│           ● ● ● ● ● ● ● ●
+│          /
+│         /
+│────────/───────────────────────────────► Probabilidade de Aresta (p)
+     0.01   0.05   0.10   0.15   0.25
+
+```
+*💡 A validação automática comprovou 100% de correspondência entre os resultados do algoritmo em C e o Python em todos os casos testados.*
 
 ## 🧾 Licença
 Uso acadêmico livre, desde que citados os autores originais.
