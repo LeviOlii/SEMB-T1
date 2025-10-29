@@ -84,7 +84,7 @@ gcc ./grafo_conexo.c -o grafo_conexo
 
 ### 2️⃣ Execução
 ```bash
-./grafo_conexo "../validation_data/'nome_do_arquivo.txt'"
+./grafo_conexo ../validation_data/'nome_do_arquivo.txt'
 ```
 
 ---
