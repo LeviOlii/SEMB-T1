@@ -120,6 +120,7 @@ int verificarConectividade(int n)
     int topo = -1; // Inicialização do índice que representa o topo da pilha
     int atual = 0; // Vértice inicial para a DFS e vértice atual em exploração
     int i;         // Índice de iteração
+    int visitados; // Contador de vértices visitados
 
     // Prepara vetor de visitados setando todas as posições como 0 (não visitado)
     for (i = 0; i < n; i++)
@@ -128,6 +129,7 @@ int verificarConectividade(int n)
     // Inicia a DFS a partir do vértice 0
     pilha[++topo] = atual; // Empilha o vértice inicial
     visitado[atual] = 1;   // Marca como visitado
+    visitados++;           // Incrementa contador pois vértice inicial é visitado
 
     while (topo >= 0)
     {
@@ -140,8 +142,14 @@ int verificarConectividade(int n)
             {
                 visitado[i] = 1;
                 pilha[++topo] = i;
+                visitados++;
             }
         }
+        
+        // Encerramento antecipado se todos foram visitados
+        if (visitados == n)
+            break;
+
     }
 
     // Verifica se todos foram visitados
@@ -165,7 +173,8 @@ int verificarConectividade(int n)
  *      executa o algoritmo de verificação de conectividade e exibe o resultado. 
  *      Permite passar o arquivo de entrada (.txt) como argumento na linha de comando.
  */
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
     int N, conexo;
     const char *arquivoEntrada;
 
@@ -174,6 +183,7 @@ int main(int argc, char *argv[]){
     {
         printf("Uso: %s <arquivo_entrada.txt>\n", argv[0]);
         return 1;
+    }
 
     // Pega o nome do arquivo do argumento
     arquivoEntrada = argv[1];
@@ -187,9 +197,9 @@ int main(int argc, char *argv[]){
 
     // Exibe o resultado no terminal
     if (conexo)
-        printf("Resultado: O grafo é CONEXO.\n");
+        printf("Resultado: O grafo eh CONEXO.\n");
     else
-        printf("Resultado: O grafo NÃO é conexo.\n");
+        printf("Resultado: O grafo NAO eh conexo.\n");
 
     return 0;
 }
