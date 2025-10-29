@@ -19,7 +19,7 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 
 ---
 
-## ⚙️ Funcionalidades
+## ⚙️ Funcionalidades da Implementação do Algoritmo
 
 - Leitura de um **arquivo de texto** contendo a matriz de adjacência (`0` e `1`).
 - Armazenamento em **estrutura estática** (`unsigned char`).
@@ -33,12 +33,12 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 ```bash
 .
 ├── docs/
-│   └── doxygen docs...          # Implementação principal
+│   └── doxygen docs...          # Documentação em Doxygen da implementação em C
 ├── src/
 │   ├── grafo_conexo.c           # Implementação principal
 │   └── validador_geral.py       # Programa de validação do algoritmo
 ├── include/
-│   └── grafo_conexo.h           # Cabeçalho com protótipos e definições
+│   └── grafo_conexo.h           # Cabeçalho da implementação do algoritmo C com protótipos e definições
 ├── validation_data/
 │   ├── grafo_p0.01_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
 │   ├── grafo_p0.01_2.txt      
