@@ -84,13 +84,7 @@ gcc ./grafo_conexo.c -o grafo_conexo
 
 ### 2️⃣ Execução
 ```bash
-./grafo_conexo
-```
-
-O código usa caminho relativo por padrão:
-
-```c
-const char *arquivoEntrada = "../input/grafo_conexo_1.txt";
+./grafo_conexo "../validation_data/'nome_do_arquivo.txt'"
 ```
 
 ---
