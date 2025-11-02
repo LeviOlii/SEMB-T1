@@ -162,7 +162,25 @@ Acurácia (%)
      0.01   0.05   0.10   0.15   0.25
 
 ```
+A imagem do gráfico será armazenada na pasta images, caso não esteja presente.
+
 *💡 A validação automática comprovou 100% de correspondência entre os resultados do algoritmo em C e o Python em todos os casos testados.*
+
+---
+
+## 🧭 Visualizações 3D dos Grafos (com Animações)
+
+Além da validação numérica, na pasta images/, estão presentes dois GIFs para auxiliar na visualização que são úteis para ilustrar a diferença estrutural entre grafos conexos e não conexos.
+
+* Os nós azuis pertencem ao maior componente conectado.
+* Os nós vermelhos representam vértices isolados.
+* A animação gira o grafo, facilitando a observação das conexões.
+
+Exemplos são nomeados da seguinte forma:
+* 🟦 grafo_conexo_3d.gif
+* 🟥 grafo_nao_conexo_3d.gif
+
+Caso os GIFs sejam apagados, a execução do script realiza a criação automática deles novamente
 
 ## 🧾 Licença
 Uso acadêmico livre, desde que citados os autores originais.
