@@ -20,12 +20,12 @@
  *  Uso acadêmico livre com citação dos autores.
  *
  *  @par Instructions:
- *       - Na pasta raiz do projeto haverá uma pasta 'src/validation_data' contendo arquivos
+ *       - Na pasta raiz do projeto haverá uma pasta 'app/validation_data' contendo arquivos
  *         de exemplo com matrizes de adjacência (0s e 1s) que representam grafos gerados
  *         com diferentes probabilidades de haver conexão entre par de vértices.
  *         Estes arquivos podem ser usados para testar o programa.
  *         OBS: O caminho definido deve ser relativo à pasta onde fica o executável.
- *       - Na pasta src, compile o código com:  gcc ./grafo_conexo.c -o grafo_conexo
+ *       - Na pasta app, compile o código com:  gcc ./grafo_conexo.c -o grafo_conexo
  *       - Execute o programa:   ./grafo_conexo "caminho_do_arquivo.txt"
  *       .
  */

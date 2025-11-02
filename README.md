@@ -34,15 +34,20 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 .
 ├── docs/
 │   └── doxygen docs...          # Documentação em Doxygen da implementação em C
-├── src/
+├── app/
 │   ├── grafo_conexo.c           # Implementação principal
+│   ├── grafo_conexo.exe         # Executável após compilação
 │   └── validador_geral.py       # Programa de validação do algoritmo
 ├── include/
 │   └── grafo_conexo.h           # Cabeçalho da implementação do algoritmo C com protótipos e definições
 ├── validation_data/
 │   ├── grafo_p0.01_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
 │   ├── grafo_p0.01_2.txt      
+│   ├── ...
+│   ├── grafo_p0.25_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
+│   ├── grafo_p0.25_2.txt      
 │   └── ...
+│
 ├── Doxyfile                     # Arquivo de configuração do Doxygen
 └── README.md                    # Este arquivo
 
@@ -74,7 +79,7 @@ A diagonal principal deve conter apenas zeros (grafo[i][i] = 0), já que um vér
 
 ## 🚀 Como Compilar e Executar
 
-Antes de tudo, vá no diretório ./src
+Antes de tudo, vá no diretório ./app
 
 ### 1️⃣ Compilação
 
