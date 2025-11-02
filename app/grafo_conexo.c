@@ -51,7 +51,7 @@ int carregarGrafo(const char *caminhoArquivo)
     int colunas_lidas = 0;
     int proximo_char;
 
-    printf("Iniciando leitura da matriz de adjacência do arquivo '%s'...\n", caminhoArquivo);
+    printf("Iniciando leitura da matriz de adjacencia do arquivo '%s'...\n", caminhoArquivo);
 
     arquivo = fopen(caminhoArquivo, "r");
     if (arquivo == NULL)
@@ -107,6 +107,19 @@ int carregarGrafo(const char *caminhoArquivo)
         }
     }
 
+    if (i > VERTICES) {
+        printf("ERRO: Numero de linhas excede o limite maximo (%d) > (%d).\n", i, VERTICES);
+        fclose(arquivo);
+        return -1;
+    }
+
+
+    for (i = 0; i < N; i++)
+    {
+        if (grafo[i][i] != 0)
+            printf("AVISO: A diagonal principal contém valor 1 na posição [%d][%d].\n", i, i);
+    }
+
     fclose(arquivo);
     printf("Matriz de adjacencia (%d x %d) carregada com sucesso.\n\n", N, N);
     return N;
@@ -117,17 +130,17 @@ int carregarGrafo(const char *caminhoArquivo)
 // -----------------------------------------------------------------------------
 int verificarConectividade(int n)
 {
-    int topo = -1;          // Inicialização do índice que representa o topo da pilha
-    int atual = 0;          // Vértice inicial para a DFS e vértice atual em exploração
-    int i;                  // Índice de iteração
+    int topo = -1; // Inicialização do índice que representa o topo da pilha
+    int atual = 0; // Vértice inicial para a DFS e vértice atual em exploração
+    int i;         // Índice de iteração
 
     // Prepara vetor de visitados setando todas as posições como 0 (não visitado)
     for (i = 0; i < n; i++)
         visitado[i] = 0;
 
     // Inicia a DFS a partir do vértice 0
-    pilha[++topo] = atual;      // Empilha o vértice inicial
-    visitado[atual] = 1;        // Marca como visitado
+    pilha[++topo] = atual; // Empilha o vértice inicial
+    visitado[atual] = 1;   // Marca como visitado
 
     while (topo >= 0)
     {
@@ -142,7 +155,6 @@ int verificarConectividade(int n)
                 pilha[++topo] = i;
             }
         }
-
     }
 
     // Verifica se todos foram visitados
@@ -163,7 +175,7 @@ int verificarConectividade(int n)
  *
  * @details
  *      Define o caminho relativo do arquivo de entrada, carrega a matriz de adjacência,
- *      executa o algoritmo de verificação de conectividade e exibe o resultado. 
+ *      executa o algoritmo de verificação de conectividade e exibe o resultado.
  *      Permite passar o arquivo de entrada (.txt) como argumento na linha de comando.
  */
 int main(int argc, char *argv[])
