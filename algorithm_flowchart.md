@@ -1,0 +1,11 @@
+flowchart TD
+    A[Início] --> B[Ler caminho do arquivo .txt] 
+    B --> C[Carregar matriz de adjacência] 
+    C --> D[Arquivo válido?]
+    D -->|Não| E[Exibir erro e encerrar]
+    D -->|Sim| F[Executar DFS iterativa]
+    F --> G[Todos os vértices foram visitados?]
+    G -->|Sim| H[Imprimir: Grafo é CONEXO]
+    G -->|Não| I[Imprimir: Grafo NÃO é conexo]
+    H --> J[Fim]
+    I --> J[Fim]

@@ -108,7 +108,7 @@ int carregarGrafo(const char *caminhoArquivo)
     }
 
     fclose(arquivo);
-    printf("Matriz de adjacência (%d x %d) carregada com sucesso.\n\n", N, N);
+    printf("Matriz de adjacencia (%d x %d) carregada com sucesso.\n\n", N, N);
     return N;
 }
 
@@ -117,19 +117,17 @@ int carregarGrafo(const char *caminhoArquivo)
 // -----------------------------------------------------------------------------
 int verificarConectividade(int n)
 {
-    int topo = -1; // Inicialização do índice que representa o topo da pilha
-    int atual = 0; // Vértice inicial para a DFS e vértice atual em exploração
-    int i;         // Índice de iteração
-    int visitados; // Contador de vértices visitados
+    int topo = -1;          // Inicialização do índice que representa o topo da pilha
+    int atual = 0;          // Vértice inicial para a DFS e vértice atual em exploração
+    int i;                  // Índice de iteração
 
     // Prepara vetor de visitados setando todas as posições como 0 (não visitado)
     for (i = 0; i < n; i++)
         visitado[i] = 0;
 
     // Inicia a DFS a partir do vértice 0
-    pilha[++topo] = atual; // Empilha o vértice inicial
-    visitado[atual] = 1;   // Marca como visitado
-    visitados++;           // Incrementa contador pois vértice inicial é visitado
+    pilha[++topo] = atual;      // Empilha o vértice inicial
+    visitado[atual] = 1;        // Marca como visitado
 
     while (topo >= 0)
     {
@@ -142,13 +140,8 @@ int verificarConectividade(int n)
             {
                 visitado[i] = 1;
                 pilha[++topo] = i;
-                visitados++;
             }
         }
-        
-        // Encerramento antecipado se todos foram visitados
-        if (visitados == n)
-            break;
 
     }
 
@@ -175,7 +168,7 @@ int verificarConectividade(int n)
  */
 int main(int argc, char *argv[])
 {
-    int N, conexo;
+    int tam_grafo, conexo;
     const char *arquivoEntrada;
 
     // Verifica se o usuário passou o nome do arquivo na linha de comando
@@ -189,11 +182,11 @@ int main(int argc, char *argv[])
     arquivoEntrada = argv[1];
 
     // Leitura e verificação
-    N = carregarGrafo(arquivoEntrada);
-    if (N <= 0)
+    tam_grafo = carregarGrafo(arquivoEntrada);
+    if (tam_grafo <= 0)
         return 1;
 
-    conexo = verificarConectividade(N);
+    conexo = verificarConectividade(tam_grafo);
 
     // Exibe o resultado no terminal
     if (conexo)

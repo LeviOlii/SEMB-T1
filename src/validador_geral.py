@@ -25,7 +25,7 @@ def save_matrix(G, filename):
 def run_c_program(path):
     """Executa o binário C e retorna True (conexo) ou False (não conexo)."""
     out = subprocess.getoutput(f"{binary_path} {path}")
-    if "CONEXO" in out and "NAO" not in out and "NÃO" not in out:
+    if "CONEXO" in out and "NAO" not in out:
         return True
     return False
 
