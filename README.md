@@ -47,9 +47,12 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 │   ├── grafo_p0.25_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
 │   ├── grafo_p0.25_2.txt      
 │   └── ...
-│
+├── images/
+│   ├── acuracia_comparacao.png  # Gráfico de acurácia C x Python
+│   ├── grafo_conexo_3d.gif      # Animação 3D do grafo conexo
+│   └── grafo_nao_conexo_3d.gif  # Animação 3D do grafo não conexo
 ├── Doxyfile                     # Arquivo de configuração do Doxygen
-└── README.md                    # Este arquivo
+└── README.md     
 
 ```
 
