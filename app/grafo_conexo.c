@@ -1,3 +1,5 @@
+#include "../include/grafo_conexo.h"
+
 /**
  * -----------------------------------------------------------------------------
  *  @file grafo_conexo.c
@@ -27,10 +29,9 @@
  *         OBS: O caminho definido deve ser relativo à pasta onde fica o executável.
  *       - Na pasta app, compile o código com:  gcc ./grafo_conexo.c -o grafo_conexo
  *       - Execute o programa:   ./grafo_conexo "caminho_do_arquivo.txt"
- *       .
+ * -----------------------------------------------------------------------------
  */
 
-#include "../include/grafo_conexo.h"
 
 // -----------------------------------------------------------------------------
 // Estruturas globais estáticas

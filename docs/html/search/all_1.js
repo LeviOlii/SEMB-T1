@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['grafo_0',['grafo',['../grafo__conexo_8c.html#ab7647080bd088f3d07424b8a5e0f991b',1,'grafo:&#160;grafo_conexo.c'],['../grafo__conexo_8h.html#ab7647080bd088f3d07424b8a5e0f991b',1,'grafo:&#160;grafo_conexo.c']]],
-  ['grafo_5fconexo_2ec_1',['grafo_conexo.c',['../grafo__conexo_8c.html',1,'']]],
-  ['grafo_5fconexo_2eh_2',['grafo_conexo.h',['../grafo__conexo_8h.html',1,'']]]
+  ['execute_20o_20programa_3a_20grafo_5fconexo_20caminho_5fdo_5farquivo_20txt_0',['- Execute o programa: ./grafo_conexo &quot;caminho_do_arquivo.txt&quot;',['../grafo__conexo_8c.html#autotoc_md1',1,'']]]
 ];
