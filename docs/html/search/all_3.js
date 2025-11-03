@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pilha_0',['pilha',['../grafo__conexo_8h.html#a482433d9bd36ec3efa561362137d0cb7',1,'pilha:&#160;grafo_conexo.c'],['../grafo__conexo_8c.html#a482433d9bd36ec3efa561362137d0cb7',1,'pilha:&#160;grafo_conexo.c']]]
+  ['main_0',['main',['../grafo__conexo_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'grafo_conexo.c']]]
 ];

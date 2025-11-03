@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['main_0',['main',['../grafo__conexo_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'grafo_conexo.c']]]
+  ['grafo_0',['grafo',['../grafo__conexo_8c.html#ab7647080bd088f3d07424b8a5e0f991b',1,'grafo:&#160;grafo_conexo.c'],['../grafo__conexo_8h.html#ab7647080bd088f3d07424b8a5e0f991b',1,'grafo:&#160;grafo_conexo.c']]],
+  ['grafo_5fconexo_20caminho_5fdo_5farquivo_20txt_1',['- Execute o programa: ./grafo_conexo &quot;caminho_do_arquivo.txt&quot;',['../grafo__conexo_8c.html#autotoc_md1',1,'']]],
+  ['grafo_5fconexo_2ec_2',['grafo_conexo.c',['../grafo__conexo_8c.html',1,'']]],
+  ['grafo_5fconexo_2eh_3',['grafo_conexo.h',['../grafo__conexo_8h.html',1,'']]]
 ];

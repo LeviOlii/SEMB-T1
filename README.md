@@ -19,7 +19,7 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 
 ---
 
-## ⚙️ Funcionalidades
+## ⚙️ Funcionalidades da Implementação do Algoritmo
 
 - Leitura de um **arquivo de texto** contendo a matriz de adjacência (`0` e `1`).
 - Armazenamento em **estrutura estática** (`unsigned char`).
@@ -33,17 +33,26 @@ O foco principal é explorar de forma simulada **as principais etapas no process
 ```bash
 .
 ├── docs/
-│   └── doxygen docs...          # Implementação principal
-├── src/
-│   └── grafo_conexo.c           # Implementação principal
+│   └── doxygen docs...          # Documentação em Doxygen da implementação em C
+├── app/
+│   ├── grafo_conexo.c           # Implementação principal
+│   ├── grafo_conexo.exe         # Executável após compilação
+│   └── validador_geral.py       # Programa de validação do algoritmo
 ├── include/
-│   └── grafo_conexo.h           # Cabeçalho com protótipos e definições
-├── input/
-│   ├── grafo_conexo_1.txt       # Exemplo de grafo conexo
-│   ├── grafo_nao_conexo_5.txt   # Exemplo de grafo não conexo
+│   └── grafo_conexo.h           # Cabeçalho da implementação do algoritmo C com protótipos e definições
+├── validation_data/
+│   ├── grafo_p0.01_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
+│   ├── grafo_p0.01_2.txt      
+│   ├── ...
+│   ├── grafo_p0.25_1.txt        # Exemplos de grafos com diferentes probabilidades para validação
+│   ├── grafo_p0.25_2.txt      
 │   └── ...
+├── images/
+│   ├── acuracia_comparacao.png  # Gráfico de acurácia C x Python
+│   ├── grafo_conexo_3d.gif      # Animação 3D do grafo conexo
+│   └── grafo_nao_conexo_3d.gif  # Animação 3D do grafo não conexo
 ├── Doxyfile                     # Arquivo de configuração do Doxygen
-└── README.md                    # Este arquivo
+└── README.md     
 
 ```
 
@@ -73,7 +82,7 @@ A diagonal principal deve conter apenas zeros (grafo[i][i] = 0), já que um vér
 
 ## 🚀 Como Compilar e Executar
 
-Antes de tudo, vá no diretório ./src
+Antes de tudo, vá no diretório ./app
 
 ### 1️⃣ Compilação
 
@@ -83,13 +92,7 @@ gcc ./grafo_conexo.c -o grafo_conexo
 
 ### 2️⃣ Execução
 ```bash
-./grafo_conexo
-```
-
-O código usa caminho relativo por padrão:
-
-```c
-const char *arquivoEntrada = "../input/grafo_conexo_1.txt";
+./grafo_conexo ../validation_data/'nome_do_arquivo.txt'
 ```
 
 ---
@@ -111,6 +114,73 @@ Resultado: O grafo NÃO é conexo.
 ```
 
 ---
+
+## 📊 Script de Validação e Análise (validador_geral.py)
+
+O validador_geral.py foi com o objetivo de validar automaticamente o algoritmo em C comparando seus resultados com os obtidos por uma biblioteca de referência do Python (NetworkX).
+
+### ⚙️ Funcionamento
+
+O script executa uma bateria de testes automatizada, gerando diversos grafos aleatórios com diferentes probabilidades de conexão entre os vértices. Ele compara a saída do algoritmo em C com a função nx.is_connected() (do NetworkX, considerada confiável), mede a acurácia dos resultados, mostra a comparação entre a saída de cada teste no terminal e gera um gráfico da acurácia por probabilidade de teste.
+
+1. Geração dos grafos:
+
+* Cria arquivos .txt representando matrizes de adjacência de grafos aleatórios.
+* Cada arquivo é salvo na pasta validation_data/.
+* Caso os arquivos já existam, o script não os recria (mantendo consistência nos testes).
+
+2. Execução automática do código em C:
+
+* O script chama o executável (grafo_conexo.exe) para testar cada arquivo de grafo.
+* Usa o módulo subprocess para capturar a saída do terminal.
+* Comparação de resultados:
+* Verifica se o resultado do programa em C coincide com o resultado do NetworkX.
+
+3. Análise e visualização:
+
+* Calcula a acurácia média para cada probabilidade de aresta.
+* Gera um gráfico de acurácia (%) em função da probabilidade, mostrando o desempenho do algoritmo.
+
+### 🧮 Exemplo de Saída no Terminal
+
+```bash
+p=0.05 | ./validation_data/grafo_p0.05_1.txt | esperado=True | obtido=True
+>> Probabilidade 0.05 → Acurácia: 100.0%
+```
+
+### 📈 Exemplo de Gráfico Gerado
+
+O gráfico mostra a acurácia do algoritmo em C em relação à implementação Python (is_connected()):
+
+```css
+Acurácia (%)
+│
+│           ● ● ● ● ● ● ● ●
+│          /
+│         /
+│────────/───────────────────────────────► Probabilidade de Aresta (p)
+     0.01   0.05   0.10   0.15   0.25
+
+```
+A imagem do gráfico será armazenada na pasta images, caso não esteja presente.
+
+*💡 A validação automática comprovou 100% de correspondência entre os resultados do algoritmo em C e o Python em todos os casos testados.*
+
+---
+
+## 🧭 Visualizações 3D dos Grafos (com Animações)
+
+Além da validação numérica, na pasta images/, estão presentes dois GIFs para auxiliar na visualização que são úteis para ilustrar a diferença estrutural entre grafos conexos e não conexos.
+
+* Os nós azuis pertencem ao maior componente conectado.
+* Os nós vermelhos representam vértices isolados.
+* A animação gira o grafo, facilitando a observação das conexões.
+
+Exemplos são nomeados da seguinte forma:
+* 🟦 grafo_conexo_3d.gif
+* 🟥 grafo_nao_conexo_3d.gif
+
+Caso os GIFs sejam apagados, a execução do script realiza a criação automática deles novamente
 
 ## 🧾 Licença
 Uso acadêmico livre, desde que citados os autores originais.

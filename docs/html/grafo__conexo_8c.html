@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Verificação de Conectividade de Grafos (DFS Iterativa): src/grafo_conexo.c File Reference</title>
+<title>Verificação de Conectividade de Grafos (DFS Iterativa): app/grafo_conexo.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,8 +102,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1595a09f36f37308f6a38ec069f98333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê a matriz de adjacência a partir de um arquivo de texto.  <br /></td></tr>
 <tr class="memitem:a538d82a32b997e0f538d6016e284ab6d" id="r_a538d82a32b997e0f538d6016e284ab6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a538d82a32b997e0f538d6016e284ab6d">verificarConectividade</a> (int n)</td></tr>
 <tr class="memdesc:a538d82a32b997e0f538d6016e284ab6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o grafo é conexo utilizando busca em profundidade (DFS) iterativa.  <br /></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal de execução do programa.  <br /></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal de execução do programa.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -122,13 +122,14 @@ Variables</h2></td></tr>
 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>03/11/2025 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
-<dl class="section user"><dt>License: </dt><dd>Uso acadêmico livre com citação dos autores.</dd></dl>
+<dl class="section user"><dt>License:</dt><dd>Uso acadêmico livre com citação dos autores.</dd></dl>
 <dl class="section user"><dt>Instructions:</dt><dd><ul>
-<li>Na pasta raiz do projeto haverá uma pasta 'input' contendo arquivos de exemplo com matrizes de adjacência (0s e 1s) que representam grafos. Altere o caminho do arquivo na função <a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Função principal de execução do programa.">main()</a> se necessário. OBS: O caminho definido deve ser relativo à pasta onde fica o executável. ex: "../input/grafo_conexo_1.txt".</li>
-<li>Compile na pasta src o código com: gcc ./grafo_conexo.c -o grafo_conexo</li>
-<li>Execute o programa: ./grafo_conexo</li>
+<li>Na pasta raiz do projeto haverá uma pasta 'app/validation_data' contendo arquivos de exemplo com matrizes de adjacência (0s e 1s) que representam grafos gerados com diferentes probabilidades de haver conexão entre par de vértices. Estes arquivos podem ser usados para testar o programa. OBS: O caminho definido deve ser relativo à pasta onde fica o executável.</li>
+<li>Na pasta app, compile o código com: gcc ./grafo_conexo.c -o grafo_conexo </li>
 </ul>
 </dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+- Execute o programa: ./grafo_conexo "caminho_do_arquivo.txt"</h2>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a1595a09f36f37308f6a38ec069f98333" name="a1595a09f36f37308f6a38ec069f98333"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1595a09f36f37308f6a38ec069f98333">&#9670;&#160;</a></span>carregarGrafo()</h2>
@@ -157,8 +158,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,15 +167,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Função principal de execução do programa. </p>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 0 em caso de sucesso, 1 em caso de erro.</dd></dl>
-<p>Define o caminho relativo do arquivo de entrada, carrega a matriz de adjacência, executa o algoritmo de verificação de conectividade e exibe o resultado. </p>
+<p>Define o caminho relativo do arquivo de entrada, carrega a matriz de adjacência, executa o algoritmo de verificação de conectividade e exibe o resultado. Permite passar o arquivo de entrada (.txt) como argumento na linha de comando. </p>
 
 </div>
 </div>
@@ -264,7 +269,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><a href="grafo__conexo_8c.html">grafo_conexo.c</a></li>
+    <li class="navelem"><b>app</b></li><li class="navelem"><a href="grafo__conexo_8c.html">grafo_conexo.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
